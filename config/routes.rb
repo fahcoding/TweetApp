@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  get 'home/top' => "home#top"
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get "/" => "home#top"
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/" => "home#top"
+
+  get 'home/top' => "home#top"
   get "about" => "home#about"
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
@@ -11,5 +13,5 @@ Rails.application.routes.draw do
   get "posts/:id" => "posts#show"
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
-  get "posts/:id/destroy" => "posts#destroy"
+  post "posts/:id/destroy" => "posts#destroy"
 end
